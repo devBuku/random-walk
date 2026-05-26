@@ -50,7 +50,7 @@ int main(int argc, const char *argv[]) {
 
   SDL_Surface *psurface = SDL_GetWindowSurface(pwindow);
 
-  SDL_Rect rect = (SDL_Rect){50, 50, 2, 2};
+  SDL_Rect rect = (SDL_Rect){WIDTH / 2, HEIGHT / 2, 2, 2};
 
   int app_running = 1;
   while (app_running) {
@@ -62,10 +62,14 @@ int main(int argc, const char *argv[]) {
     }
 
     Velocity v = get_rand_v();
-    rect.x += v.vx * SCALE;
-    rect.y += v.vy * SCALE;
 
-    SDL_FillRect(psurface, &rect, 0xFFFFFF);
+    for (int i = 0; i < SCALE; i++) {
+
+      rect.x += v.vx;
+      rect.y += v.vy;
+
+      SDL_FillRect(psurface, &rect, 0xFFFFFF);
+    }
     SDL_UpdateWindowSurface(pwindow);
 
     SDL_Delay(20);
