@@ -21,4 +21,4 @@ You can also set how many walkers you want:
 ./random-walk 100  # 100 ants!
 ```
 
-Press **Q** to quit.
+Press **q** to quit.
