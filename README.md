@@ -11,14 +11,9 @@ This program does the same thing — but with many colorful "ants" walking at th
 ## How to run
 
 ```bash
-gcc -Wall -Wextra -o random-walk code.c `sdl2-config --cflags --libs`
-```
-
-You can also set how many walkers you want:
-
-```bash
-./random-walk 10   # 10 ants
-./random-walk 100  # 100 ants!
+make          # 5 ants (default)
+make 10       # 10 ants
+make 100      # 100 ants!
 ```
 
 Press **q** to quit.
